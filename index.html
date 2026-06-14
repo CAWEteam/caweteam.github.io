@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Center for Animal Welfare Economics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #1B2A4A;
+      --navy-60:    rgba(27,42,74,0.6);
+      --navy-20:    rgba(27,42,74,0.2);
+      --navy-08:    rgba(27,42,74,0.08);
+      --mustard:    #E3A020;
+      --orange:     #D4601A;
+      --black:      #111111;
+      --grey:       #555555;
+      --rule:       #E8E8E8;
+      --white:      #FFFFFF;
+      --offwhite:   #F9F9F9;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 56px;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .nav-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy-60);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 160px 56px 100px;
+      border-bottom: 1px solid var(--rule);
+      background: var(--white);
+    }
+
+    .hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--navy-60);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 2px;
+      background: var(--navy-20);
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 5.5vw, 72px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      max-width: 800px;
+      margin-bottom: 28px;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--grey);
+      max-width: 520px;
+      margin-bottom: 44px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 32px;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.85; }
+
+    /* ── STAT SECTIONS ── */
+    .stat-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 56px;
+      border-bottom: 1px solid var(--rule);
+      background: var(--white);
+    }
+
+    .stat-section:nth-child(even) {
+      background: var(--offwhite);
+    }
+
+    .stat-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 2px;
+      background: var(--navy-08);
+      color: var(--navy);
+      border: 1px solid var(--navy-20);
+      margin-bottom: 28px;
+    }
+
+    .stat-divider {
+      width: 56px;
+      height: 3px;
+      background: var(--mustard);
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(80px, 16vw, 200px);
+      font-weight: 900;
+      line-height: 0.88;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+      margin-bottom: 36px;
+    }
+
+    .stat-statement {
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--black);
+      max-width: 740px;
+      margin-bottom: 16px;
+    }
+
+    .stat-statement strong { font-weight: 600; }
+
+    .stat-details {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--grey);
+      max-width: 620px;
+      margin-bottom: 24px;
+    }
+
+    .stat-source {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: #AAAAAA;
+      text-transform: uppercase;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      display: inline-block;
+    }
+
+    /* ── GRAPHS ── */
+    .graphs-section {
+      padding: 100px 56px;
+      background: var(--offwhite);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--navy-60);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--mustard);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 48px;
+      line-height: 1.15;
+    }
+
+    .graphs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 860px) {
+      .graphs-grid { grid-template-columns: 1fr; }
+    }
+
+    .graph-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      padding: 36px;
+    }
+
+    .graph-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .graph-source-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      color: #AAAAAA;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .bar-chart { display: flex; flex-direction: column; gap: 14px; }
+    .bar-row { display: flex; flex-direction: column; gap: 6px; }
+    .bar-label-row { display: flex; justify-content: space-between; align-items: baseline; }
+    .bar-label { font-size: 12px; color: var(--grey); }
+    .bar-value { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; color: var(--black); }
+    .bar-track { height: 6px; background: #EEEEEE; border-radius: 1px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 1px; background: var(--orange); }
+
+    .compare-chart { display: flex; flex-direction: column; gap: 16px; }
+    .compare-row { display: grid; grid-template-columns: 175px 1fr 70px; align-items: center; gap: 14px; }
+    .compare-label { font-size: 12px; color: var(--grey); line-height: 1.4; }
+    .compare-track { height: 5px; background: #EEEEEE; border-radius: 2px; overflow: hidden; }
+    .compare-fill { height: 100%; border-radius: 2px; background: var(--orange); }
+    .compare-val { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; color: var(--black); text-align: right; }
+
+    .big-stat-display { display: flex; flex-direction: column; }
+    .big-stat-row { display: flex; align-items: center; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+    .big-stat-row:last-child { border-bottom: none; }
+    .big-stat-num { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; line-height: 1; min-width: 96px; color: var(--navy); }
+    .big-stat-desc { font-size: 12px; line-height: 1.55; color: var(--grey); }
+
+    /* ── MISSION ── */
+    .mission-section {
+      min-height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 56px;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mission-section::before {
+      content: '"';
+      position: absolute;
+      top: -80px; left: 36px;
+      font-family: 'Playfair Display', serif;
+      font-size: 500px;
+      font-weight: 900;
+      color: rgba(227,160,32,0.06);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .mission-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mustard);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mission-label::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--mustard);
+    }
+
+    .mission-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3.5vw, 48px);
+      font-weight: 700;
+      line-height: 1.28;
+      color: var(--white);
+      max-width: 820px;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 32px;
+    }
+
+    .mission-text em {
+      font-style: italic;
+      color: var(--mustard);
+    }
+
+    .mission-sub {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.5);
+      max-width: 520px;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 40px;
+    }
+
+    .btn-mission {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--mustard);
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 32px;
+      position: relative;
+      z-index: 1;
+      transition: opacity 0.2s;
+    }
+
+    .btn-mission:hover { opacity: 0.88; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 32px 56px;
+      background: #080E1A;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.2);
+      text-transform: uppercase;
+    }
+
+    .footer-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: rgba(255,255,255,0.12);
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .hero, .stat-section, .graphs-section, .mission-section { padding-left: 24px; padding-right: 24px; }
+      footer { padding: 28px 24px; }
+      .compare-row { grid-template-columns: 120px 1fr 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-logo">CAWE</span>
+    <ul class="nav-links">
+      <li><a href="#data">The Data</a></li>
+      <li><a href="#repository">Repository</a></li>
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Center for Animal Welfare Economics</p>
+    <h1 class="hero-headline">Using economics to drive a more humane world for animals.</h1>
+    <p class="hero-sub">A nonprofit applying economic analysis to one of the most underfunded moral crises of our time — the treatment of animals.</p>
+    <a href="#data" class="btn-primary">See the Data →</a>
+  </section>
+
+  <!-- STAT 1 — FARM -->
+  <section class="stat-section" id="data">
+    <div class="stat-tag">Farm Animals</div>
+    <div class="stat-divider"></div>
+    <div class="stat-number">99%</div>
+    <p class="stat-statement">
+      <strong>99% of farm animals in the US live on factory farms</strong> — where egg-laying hens are confined to cages the size of a sheet of paper, pigs undergo tail-docking and teeth-clipping without anesthetic, and turkeys are packed 10,000 to a single building.
+    </p>
+    <p class="stat-details">94% of Americans say animals raised for food deserve to live free from abuse and cruelty. The economics of our food system say otherwise.</p>
+    <span class="stat-source">Sources: USDA 2022 Agricultural Census · Our World in Data (Nov 2024) · Farm Sanctuary 2024 · ASPCA</span>
+  </section>
+
+  <!-- STAT 2 — PETS -->
+  <section class="stat-section">
+    <div class="stat-tag">Companion Animals</div>
+    <div class="stat-divider"></div>
+    <div class="stat-number">52%</div>
+    <p class="stat-statement">
+      <strong>52% of America's 87 million pet-owning households have skipped veterinary treatment</strong> due to cost — a crisis experts now call "economic euthanasia."
+    </p>
+    <p class="stat-details">Veterinary prices rose 5.9% in a single year — more than double overall inflation. For millions of pets, access to care depends entirely on their owner's income.</p>
+    <span class="stat-source">Sources: Bureau of Labor Statistics (April 2025) · The Atlantic · Synchrony Pet Lifetime of Care Study 2025</span>
+  </section>
+
+  <!-- STAT 3 — FARM -->
+  <section class="stat-section">
+    <div class="stat-tag">Farm Animals</div>
+    <div class="stat-divider"></div>
+    <div class="stat-number">0</div>
+    <p class="stat-statement">
+      <strong>There is not a single federal law governing the on-farm treatment of animals raised for food.</strong> The federal Animal Welfare Act explicitly excludes farm animals from the very definition of "animal."
+    </p>
+    <p class="stat-details">18 states have passed their own protections — but evidence of enforcement was found for only 12 of 44 provisions. For 10 billion animals raised and killed for food in the US each year, the law simply does not apply.</p>
+    <span class="stat-source">Sources: Animal Welfare Institute (2024) · Animal Legal Defense Fund · Faunalytics (Sept 2024)</span>
+  </section>
+
+  <!-- STAT 4 — STRAYS -->
+  <section class="stat-section">
+    <div class="stat-tag">Companion Animals</div>
+    <div class="stat-divider"></div>
+    <div class="stat-number">70M</div>
+    <p class="stat-statement">
+      <strong>There are an estimated 70 million stray animals in the US</strong> — yet only 6 million make it to shelters. Of those, nearly 600,000 are euthanized every year.
+    </p>
+    <p class="stat-details">The cost of this crisis falls on municipalities, taxpayers, and the animals themselves. It remains one of the most economically underfunded public welfare problems in the country.</p>
+    <span class="stat-source">Sources: ASPCA Shelter Statistics (2025) · Shelter Animals Count Annual Report (2025) · PetRadar</span>
+  </section>
+
+  <!-- GRAPHS -->
+  <section class="graphs-section" id="repository">
+    <p class="section-eyebrow">Data in context</p>
+    <h2 class="section-title">The economics, by the numbers</h2>
+    <div class="graphs-grid">
+
+      <div class="graph-card">
+        <p class="graph-title">% of US animals raised on factory farms, by species</p>
+        <p class="graph-source-label">Source: USDA 2022 Agricultural Census · Our World in Data 2024</p>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <div class="bar-label-row"><span class="bar-label">Broiler Chickens</span><span class="bar-value">99.9%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:99.9%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label-row"><span class="bar-label">Turkeys</span><span class="bar-value">99.8%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:99.8%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label-row"><span class="bar-label">Pigs</span><span class="bar-value">98.3%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:98.3%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label-row"><span class="bar-label">Egg-Laying Hens</span><span class="bar-value">98.2%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:98.2%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label-row"><span class="bar-label">Dairy Cows</span><span class="bar-value">70.4%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:70.4%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="graph-card">
+        <p class="graph-title">Veterinary price inflation vs. overall consumer prices</p>
+        <p class="graph-source-label">Source: Bureau of Labor Statistics, April 2024–April 2025</p>
+        <div class="compare-chart">
+          <div class="compare-row">
+            <span class="compare-label">Veterinary services</span>
+            <div class="compare-track"><div class="compare-fill" style="width:100%"></div></div>
+            <span class="compare-val">+5.9%</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-label">All consumer goods (CPI)</span>
+            <div class="compare-track"><div class="compare-fill" style="width:41%;opacity:0.4"></div></div>
+            <span class="compare-val">+2.4%</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-label">Lifetime cost — dog</span>
+            <div class="compare-track"><div class="compare-fill" style="width:58%"></div></div>
+            <span class="compare-val">$34,550</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-label">Lifetime cost — cat</span>
+            <div class="compare-track"><div class="compare-fill" style="width:43%"></div></div>
+            <span class="compare-val">$26,000+</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-label">Pet owners skipping vet care</span>
+            <div class="compare-track"><div class="compare-fill" style="width:52%"></div></div>
+            <span class="compare-val">52%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="graph-card">
+        <p class="graph-title">US animal shelter outcomes, 2025</p>
+        <p class="graph-source-label">Source: ASPCA Shelter Statistics 2025 · Shelter Animals Count 2025</p>
+        <div class="big-stat-display">
+          <div class="big-stat-row">
+            <span class="big-stat-num">70M</span>
+            <span class="big-stat-desc">estimated stray animals in the US — the vast majority never reach a shelter</span>
+          </div>
+          <div class="big-stat-row">
+            <span class="big-stat-num" style="opacity:0.35">6M</span>
+            <span class="big-stat-desc">animals that actually enter shelters each year</span>
+          </div>
+          <div class="big-stat-row">
+            <span class="big-stat-num" style="color:var(--orange)">597K</span>
+            <span class="big-stat-desc">euthanized in shelters in 2025 — down 7% from 2024, but still nearly 600,000 lives</span>
+          </div>
+          <div class="big-stat-row">
+            <span class="big-stat-num" style="color:var(--mustard)">4.2M</span>
+            <span class="big-stat-desc">dogs and cats adopted in 2025 — proof that investment in outcomes works</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="graph-card">
+        <p class="graph-title">US consumer willingness to pay for humane-certified products</p>
+        <p class="graph-source-label">Source: Peer-reviewed study, PMC/NIH · ASPCA Consumer Research 2023</p>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <div class="bar-label-row"><span class="bar-label">Premium for certified eggs</span><span class="bar-value">+32%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:32%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label-row"><span class="bar-label">Premium for certified chicken</span><span class="bar-value">+48%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:48%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label-row"><span class="bar-label">Would choose restaurant for welfare food</span><span class="bar-value">57%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:57%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label-row"><span class="bar-label">Require 3rd-party certification</span><span class="bar-value">78%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:78%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label-row"><span class="bar-label">Support stronger farm welfare laws</span><span class="bar-value">79%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:79%"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission-section" id="mission">
+    <p class="mission-label">Our Mission</p>
+    <h2 class="mission-text">
+      CAWE's mission is to use the power of <em>economics</em> to drive a more humane treatment of animals — by corporations, governments, and individuals.
+    </h2>
+    <p class="mission-sub">We index, curate, and translate the world's research on animal welfare economics into plain language — so that the evidence reaches the people who need it most: policymakers, sanctuary operators, donors, and the public.</p>
+    <a href="#repository" class="btn-mission">Explore the Repository →</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <span class="footer-logo">Center for Animal Welfare Economics · Portland, Oregon · EIN 33-4849757</span>
+    <span class="footer-note">501(c)(3) Nonprofit · Registry #239825193 · DOJ #70507</span>
+  </footer>
+
+</body>
+</html>
