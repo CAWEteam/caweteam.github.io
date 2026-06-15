@@ -46,6 +46,7 @@
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--rule);
       width: 100%;
+      position: relative;
     }
 
     .nav-logo {
@@ -75,6 +76,32 @@
     }
 
     .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+
+    /* ── HAMBURGER ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 200;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* ── PAGE HEADER ── */
     .page-header {
@@ -488,7 +515,38 @@
 
     @media (max-width: 768px) {
       nav { padding: 16px 24px; }
-      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        z-index: 200;
+        border-top: 2px solid var(--mustard);
+        box-shadow: 0 8px 24px rgba(27,42,74,0.12);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { display: block; border-bottom: 1px solid var(--rule); }
+      .nav-links li:last-child { border-bottom: none; }
+      .nav-links a {
+        display: block;
+        padding: 18px 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--navy);
+        font-weight: 500;
+        text-decoration: none;
+      }
       .page-header, .filters-bar, .results-bar, .cards-grid, footer { padding-left: 24px; padding-right: 24px; }
     }
   </style>
@@ -497,12 +555,15 @@
 
   <!-- NAV -->
   <nav>
-    <a href="/" class="nav-logo">CAWE</a>
-    <ul class="nav-links">
-      <li><a href="repository.html" class="active">Research Repository</a></li>
+    <a href="/" class="nav-logo">Center for Animal Welfare Economics</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/repository.html" class="active">Research Repository</a></li>
       <li><a href="#">Current Projects</a></li>
       <li><a href="mailto:caweteam@gmail.com">Contact</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- PAGE HEADER -->
@@ -674,5 +735,21 @@
     });
   </script>
 
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  </script>
 </body>
 </html>
