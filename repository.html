@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Repository — Center for Animal Welfare Economics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:     #1B2A4A;
+      --navy-60:  rgba(27,42,74,0.6);
+      --navy-20:  rgba(27,42,74,0.2);
+      --navy-08:  rgba(27,42,74,0.08);
+      --mustard:  #E3A020;
+      --orange:   #D4601A;
+      --black:    #111111;
+      --grey:     #555555;
+      --rule:     #E8E8E8;
+      --white:    #FFFFFF;
+      --offwhite: #F9F9F9;
+    }
+
+    html, body { width: 100%; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--offwhite);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px max(56px, 8vw);
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+      width: 100%;
+    }
+
+    .nav-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy-60);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      width: 100%;
+      padding: 140px max(56px, 8vw) 60px;
+      background: var(--navy);
+      border-bottom: 4px solid var(--mustard);
+    }
+
+    .page-header-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mustard);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .page-header-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--mustard);
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .page-header p {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      max-width: 600px;
+    }
+
+    /* ── FILTERS BAR ── */
+    .filters-bar {
+      width: 100%;
+      background: var(--white);
+      border-bottom: 1px solid var(--rule);
+      padding: 20px max(56px, 8vw);
+      position: sticky;
+      top: 65px;
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Search */
+    .search-wrap {
+      position: relative;
+      max-width: 480px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #AAAAAA;
+      font-size: 14px;
+      pointer-events: none;
+    }
+
+    #search-input {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--black);
+      background: var(--offwhite);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    #search-input:focus { border-color: var(--navy); }
+    #search-input::placeholder { color: #BBBBBB; }
+
+    /* Filter rows */
+    .filter-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #AAAAAA;
+      min-width: 80px;
+    }
+
+    .filter-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      background: transparent;
+      color: var(--grey);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .filter-btn:hover { border-color: var(--navy); color: var(--navy); }
+    .filter-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+    /* Results count */
+    .results-bar {
+      padding: 12px max(56px, 8vw);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .results-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #AAAAAA;
+    }
+
+    /* ── CARDS GRID ── */
+    .cards-grid {
+      padding: 8px max(56px, 8vw) 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+      gap: 20px;
+    }
+
+    @media (max-width: 520px) {
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover { box-shadow: 0 4px 20px rgba(27,42,74,0.10); }
+
+    .card-category-bar {
+      background: var(--navy);
+      padding: 8px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-category {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mustard);
+    }
+
+    .card-subcategory {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .card-body { padding: 20px 24px 24px; flex: 1; display: flex; flex-direction: column; }
+
+    /* Badges */
+    .card-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 2px;
+      border: 1px solid;
+    }
+
+    .badge-academic   { background: #EFF6FF; color: #1D4ED8; border-color: #BFDBFE; }
+    .badge-government { background: #F0FDF4; color: #15803D; border-color: #BBF7D0; }
+    .badge-industry   { background: #FFF7ED; color: #C2410C; border-color: #FED7AA; }
+    .badge-mainstream { background: #FDF4FF; color: #7E22CE; border-color: #E9D5FF; }
+    .badge-open       { background: #F0FDF4; color: #15803D; border-color: #BBF7D0; }
+    .badge-paywalled  { background: #FEF2F2; color: #DC2626; border-color: #FECACA; }
+    .badge-year       { background: var(--offwhite); color: var(--grey); border-color: var(--rule); }
+
+    /* Title */
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .card-authors {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #AAAAAA;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+
+    /* Key finding */
+    .card-finding {
+      background: var(--offwhite);
+      border-left: 3px solid var(--mustard);
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .card-finding-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #AAAAAA;
+      margin-bottom: 5px;
+    }
+
+    .card-finding-text {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--black);
+    }
+
+    /* Impact */
+    .card-impact {
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+    }
+
+    .card-impact.positive { background: #F0FDF4; }
+    .card-impact.negative { background: #FFFBEB; }
+    .card-impact.mixed    { background: #FDF4FF; }
+
+    .card-impact-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .positive .card-impact-label { color: #15803D; }
+    .negative .card-impact-label { color: #B45309; }
+    .mixed    .card-impact-label { color: #7E22CE; }
+
+    .card-impact-text {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--grey);
+    }
+
+    /* Audience */
+    .card-audience {
+      margin-bottom: 16px;
+    }
+
+    .card-audience-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #AAAAAA;
+      margin-bottom: 6px;
+    }
+
+    .card-audience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .audience-tag {
+      background: var(--navy-08);
+      color: var(--navy);
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 2px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.06em;
+    }
+
+    /* Footer of card */
+    .card-footer {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 8px 14px;
+      transition: opacity 0.2s;
+    }
+
+    .card-link:hover { opacity: 0.85; }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .card-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: #BBBBBB;
+      letter-spacing: 0.06em;
+    }
+
+    /* No results */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .no-results p {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .no-results span {
+      font-size: 14px;
+      color: var(--grey);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      width: 100%;
+      padding: 32px max(56px, 8vw);
+      background: #080E1A;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.2);
+      text-transform: uppercase;
+    }
+
+    .footer-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: rgba(255,255,255,0.12);
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .page-header, .filters-bar, .results-bar, .cards-grid, footer { padding-left: 24px; padding-right: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">CAWE</a>
+    <ul class="nav-links">
+      <li><a href="repository.html" class="active">Research Repository</a></li>
+      <li><a href="#">Current Projects</a></li>
+      <li><a href="mailto:caweteam@gmail.com">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="page-header-eyebrow">Center for Animal Welfare Economics</p>
+    <h1>Research Repository</h1>
+    <p>Curated, indexed, and translated research on the economics of animal welfare. Each entry summarizes findings and economic impact in plain language.</p>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters-bar">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search-input" placeholder="Search by keyword, topic, or author..." />
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Category</span>
+      <button class="filter-btn active" data-filter="category" data-value="all">All</button>
+      <button class="filter-btn" data-filter="category" data-value="Farm & Livestock Animals">Farm & Livestock</button>
+      <button class="filter-btn" data-filter="category" data-value="Companion Animals (Pets)">Companion Animals</button>
+      <button class="filter-btn" data-filter="category" data-value="Wildlife & Wild Animals">Wildlife</button>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Source</span>
+      <button class="filter-btn active" data-filter="source" data-value="all">All</button>
+      <button class="filter-btn" data-filter="source" data-value="academic">🔬 Peer-Reviewed</button>
+      <button class="filter-btn" data-filter="source" data-value="government">🏛️ Government</button>
+      <button class="filter-btn" data-filter="source" data-value="industry">🤝 Industry & NGO</button>
+      <button class="filter-btn" data-filter="source" data-value="mainstream">📰 Mainstream</button>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Impact</span>
+      <button class="filter-btn active" data-filter="impact" data-value="all">All</button>
+      <button class="filter-btn" data-filter="impact" data-value="positive">✅ Positive</button>
+      <button class="filter-btn" data-filter="impact" data-value="negative">⚠️ Negative</button>
+      <button class="filter-btn" data-filter="impact" data-value="mixed">↔️ Mixed</button>
+    </div>
+  </div>
+
+  <!-- RESULTS COUNT -->
+  <div class="results-bar">
+    <span class="results-count" id="results-count">Loading...</span>
+  </div>
+
+  <!-- CARDS -->
+  <div class="cards-grid" id="cards-grid"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Center for Animal Welfare Economics · Portland, Oregon · EIN 33-4849757</span>
+    <span class="footer-note">501(c)(3) Nonprofit · Registry #239825193 · DOJ #70507</span>
+  </footer>
+
+  <script>
+    const IMPACT_CONFIG = {
+      positive: { label: '✅ Positive Economic Impact', class: 'positive' },
+      negative: { label: '⚠️ Economic Cost / Risk Documented', class: 'negative' },
+      mixed:    { label: '↔️ Mixed / Context-Dependent', class: 'mixed' }
+    };
+
+    const SOURCE_CLASS = {
+      academic:   'badge-academic',
+      government: 'badge-government',
+      industry:   'badge-industry',
+      mainstream: 'badge-mainstream'
+    };
+
+    let allArticles = [];
+    let activeFilters = { category: 'all', source: 'all', impact: 'all' };
+    let searchQuery = '';
+
+    // Load articles from JSON file
+    fetch('articles.json')
+      .then(r => r.json())
+      .then(data => {
+        allArticles = data;
+        render();
+      })
+      .catch(err => {
+        document.getElementById('cards-grid').innerHTML = '<div class="no-results"><p>Unable to load articles.</p><span>Please try refreshing the page.</span></div>';
+        console.error('Error loading articles:', err);
+      });
+
+    function matches(article) {
+      const catOk  = activeFilters.category === 'all' || article.category === activeFilters.category;
+      const srcOk  = activeFilters.source   === 'all' || article.sourceType === activeFilters.source;
+      const impOk  = activeFilters.impact   === 'all' || article.impactType === activeFilters.impact;
+      const q = searchQuery.toLowerCase();
+      const searchOk = !q || [
+        article.title, article.authors, article.publication,
+        article.keyFinding, article.impactSummary,
+        article.category, article.subcategory,
+        ...(article.tags || []), ...(article.audience || [])
+      ].some(f => f && f.toLowerCase().includes(q));
+      return catOk && srcOk && impOk && searchOk;
+    }
+
+    function buildCard(a) {
+      const impact = IMPACT_CONFIG[a.impactType] || IMPACT_CONFIG.mixed;
+      const srcClass = SOURCE_CLASS[a.sourceType] || 'badge-academic';
+      const accessBadge = a.access === 'open'
+        ? '<span class="badge badge-open">🔓 Open Access</span>'
+        : '<span class="badge badge-paywalled">🔒 Paywalled</span>';
+      const audienceTags = (a.audience || []).map(au => `<span class="audience-tag">${au}</span>`).join('');
+      const tags = (a.tags || []).slice(0, 4).map(t => `<span class="card-tag">#${t}</span>`).join('');
+
+      return `
+        <div class="card">
+          <div class="card-category-bar">
+            <span class="card-category">${a.category}</span>
+            <span class="card-subcategory">${a.subcategory}</span>
+          </div>
+          <div class="card-body">
+            <div class="card-badges">
+              <span class="badge ${srcClass}">${a.sourceLabel}</span>
+              ${accessBadge}
+              <span class="badge badge-year">${a.year}</span>
+            </div>
+            <h3 class="card-title">${a.title}</h3>
+            <p class="card-authors">${a.authors} · ${a.publication}</p>
+            <div class="card-finding">
+              <p class="card-finding-label">Key Finding</p>
+              <p class="card-finding-text">${a.keyFinding}</p>
+            </div>
+            <div class="card-impact ${impact.class}">
+              <p class="card-impact-label">${impact.label}</p>
+              <p class="card-impact-text">${a.impactSummary}</p>
+            </div>
+            <div class="card-audience">
+              <p class="card-audience-label">Relevant For</p>
+              <div class="card-audience-tags">${audienceTags}</div>
+            </div>
+            <div class="card-footer">
+              <a href="${a.url}" target="_blank" rel="noopener noreferrer" class="card-link">View Source →</a>
+              <div class="card-tags">${tags}</div>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    function render() {
+      const filtered = allArticles.filter(matches);
+      const grid = document.getElementById('cards-grid');
+      const count = document.getElementById('results-count');
+      count.textContent = `Showing ${filtered.length} of ${allArticles.length} entries`;
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div class="no-results"><p>No results found.</p><span>Try adjusting your filters or search terms.</span></div>';
+      } else {
+        grid.innerHTML = filtered.map(buildCard).join('');
+      }
+    }
+
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filterType = btn.dataset.filter;
+        const value = btn.dataset.value;
+        activeFilters[filterType] = value;
+        document.querySelectorAll(`[data-filter="${filterType}"]`).forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        render();
+      });
+    });
+
+    // Search
+    document.getElementById('search-input').addEventListener('input', e => {
+      searchQuery = e.target.value;
+      render();
+    });
+  </script>
+
+</body>
+</html>
