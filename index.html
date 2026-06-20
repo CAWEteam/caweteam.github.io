@@ -322,6 +322,45 @@
     .big-stat-num { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; line-height: 1; min-width: 96px; color: var(--navy); }
     .big-stat-desc { font-size: 12px; line-height: 1.55; color: var(--grey); }
 
+    /* ── RATIONALE ── */
+    .rationale-section {
+      width: 100%;
+      padding: 80px max(56px, 8vw);
+      background: var(--white);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .rationale-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .rationale-label::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--mustard);
+    }
+
+    .rationale-text {
+      font-size: clamp(16px, 1.6vw, 19px);
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--black);
+      max-width: 75vw;
+      margin-bottom: 20px;
+    }
+
+    .rationale-text:last-child { margin-bottom: 0; }
+
     /* ── MISSION ── */
     .mission-section {
       width: 100%;
@@ -624,6 +663,12 @@
       </div>
 
     </div>
+  </section>
+
+  <section class="rationale-section">
+    <p class="rationale-label">CAWE's Mission Rationale</p>
+    <p class="rationale-text">Humane treatment and profitability are not opposing forces. Producers who improve animal welfare see measurable returns through premium market access, reduced mortality costs, and stronger consumer trust.</p>
+    <p class="rationale-text">CAWE's goal is not to end animal agriculture or convert consumers to a particular diet. It is to ensure that animals are treated humanely while they are alive. Our efforts are to show that economic incentives, not moral appeals alone, are what drive lasting change at scale.</p>
   </section>
 
   <section class="mission-section" id="mission">
