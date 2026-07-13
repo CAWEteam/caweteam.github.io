@@ -207,5 +207,220 @@
       "regulation",
       "reform"
     ]
+  },
+  {
+    "id": 8,
+    "category": "Companion Animals (Pets)",
+    "subcategory": "Veterinary Costs & Healthcare Economics",
+    "sourceType": "government",
+    "sourceLabel": "Government & Policy",
+    "title": "Veterinarians Report Increasing Price Sensitivity, Decreasing Visits",
+    "authors": "American Veterinary Medical Association (AVMA)",
+    "publication": "AVMA",
+    "year": 2026,
+    "access": "open",
+    "url": "https://www.avma.org/news/veterinarians-report-increasing-price-sensitivity-decreasing-visits",
+    "keyFinding": "81% of surveyed veterinarians reported clients were more cost-sensitive than in 2024, when the figure was 72%. Clients are increasingly declining recommended care, starting with diagnostics, then nonessential procedures and preventive care.",
+    "impactSummary": "Economic pressure is now visibly changing the actual medical care animals receive. Preventive care is the first casualty \u2014 clients delay or skip routine visits when prices rise, creating downstream health costs that far exceed what prevention would have cost. This is not just a pet-owner problem; veterinary practices themselves are feeling the squeeze, with profitability improving for only 32% of respondents in 2025, the lowest level in several years.",
+    "impactType": "negative",
+    "audience": [
+      "Policymakers",
+      "Veterinary Professionals",
+      "Donors",
+      "Researchers"
+    ],
+    "tags": [
+      "veterinary costs",
+      "price sensitivity",
+      "preventive care",
+      "inflation",
+      "AVMA",
+      "pet healthcare"
+    ]
+  },
+  {
+    "id": 9,
+    "category": "Companion Animals (Pets)",
+    "subcategory": "Veterinary Costs & Healthcare Economics",
+    "sourceType": "industry",
+    "sourceLabel": "Industry & NGO Report",
+    "title": "2025 Pet Lifetime of Care Study",
+    "authors": "Synchrony / CareCredit",
+    "publication": "Synchrony",
+    "year": 2025,
+    "access": "open",
+    "url": "https://www.businesswire.com/news/home/20250602646761/en/New-Synchrony-Study-Finds-Nearly-8-out-of-10-Pet-Owners-Underestimate-the-Cost-of-Care-Reaching-Up-to-61000-During-a-Pets-Lifetime",
+    "keyFinding": "80% of pet owners underestimate lifetime pet care expenses. Dog care costs over 15 years now range from 2,125 to 0,602 \u2014 up 11.65% since 2022. Cat care costs surged 19.4% to 0,073\u20137,106. Nearly 50% of pet owners worry about unexpected veterinary bills, up from 33% in 2022.",
+    "impactSummary": "Only 20% of pet owners have dedicated savings or insurance for pet emergencies, yet lifetime costs have risen sharply. This gap between expectation and reality is a structural economic problem, not just an individual budgeting failure. It directly predicts the care-deferral and shelter-surrender outcomes documented elsewhere in this repository. When owners cannot afford care, animals suffer \u2014 and the costs ultimately shift to shelters, municipalities, and taxpayers.",
+    "impactType": "negative",
+    "audience": [
+      "Pet Owners",
+      "Policymakers",
+      "Donors",
+      "Shelter Operators"
+    ],
+    "tags": [
+      "lifetime cost",
+      "pet insurance",
+      "veterinary costs",
+      "dog",
+      "cat",
+      "financial planning",
+      "Synchrony"
+    ]
+  },
+  {
+    "id": 10,
+    "category": "Companion Animals (Pets)",
+    "subcategory": "Breeding Economics & Inherited Health Conditions",
+    "sourceType": "academic",
+    "sourceLabel": "Peer-Reviewed / Academic",
+    "title": "Disease Burden in Four Populations of Dog and Cat Breeds Compared to Mixed-Breed Dogs and European Shorthair Cats",
+    "authors": "Multiple authors",
+    "publication": "ScienceDirect / Preventive Veterinary Medicine",
+    "year": 2017,
+    "access": "paywalled",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0167587717301708",
+    "keyFinding": "Purebred dogs and cats carry a measurably higher disease burden than mixed-breed animals due to reduced genetic variation from inbreeding and repeated use of the same breeding stock, which leads to a greater incidence of inherited diseases.",
+    "impactSummary": "For prospective pet owners, a purebred animal means higher lifetime veterinary costs \u2014 an economic consequence of breeding decisions made generations earlier. This study quantifies what many owners learn too late: the purchase price of a purebred pet is only the beginning. Inherited conditions including heart disease, hip dysplasia, and respiratory disorders generate ongoing costs that mixed-breed owners are statistically less likely to face.",
+    "impactType": "negative",
+    "audience": [
+      "Pet Owners",
+      "Veterinary Professionals",
+      "Policymakers",
+      "Researchers"
+    ],
+    "tags": [
+      "purebred",
+      "mixed breed",
+      "inherited disease",
+      "genetic disorders",
+      "breeding",
+      "lifetime cost",
+      "dog",
+      "cat"
+    ]
+  },
+  {
+    "id": 11,
+    "category": "Companion Animals (Pets)",
+    "subcategory": "Breeding Economics & Inherited Health Conditions",
+    "sourceType": "academic",
+    "sourceLabel": "Peer-Reviewed / Academic",
+    "title": "Ten Inherited Disorders in Purebred Dogs by Functional Breed Groupings",
+    "authors": "Bellumori TP, Famula TR, Bannasch DL, Belanger JM, Oberbauer AM",
+    "publication": "PMC / NIH",
+    "year": 2013,
+    "access": "open",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4579393/",
+    "keyFinding": "Analysis of 88,635 dogs identified ten inherited conditions with significantly greater prevalence in purebred dogs compared to mixed-breed dogs, including epilepsy, heart disease, elbow dysplasia, and intervertebral disk disease.",
+    "impactSummary": "Each of the ten conditions identified carries significant, predictable veterinary costs over an animal's lifetime. This research gives consumers, breeders, and policymakers concrete breed-level data to connect purchasing decisions directly to downstream economic and welfare outcomes. A buyer who chooses a breed predisposed to epilepsy or heart disease is unknowingly committing to years of specialist care \u2014 costs that often lead to financial strain, deferred treatment, or ultimately surrender to a shelter.",
+    "impactType": "negative",
+    "audience": [
+      "Pet Owners",
+      "Veterinary Professionals",
+      "Policymakers",
+      "Researchers"
+    ],
+    "tags": [
+      "purebred",
+      "inherited disorders",
+      "epilepsy",
+      "heart disease",
+      "dysplasia",
+      "dog breeds",
+      "UC Davis"
+    ]
+  },
+  {
+    "id": 12,
+    "category": "Companion Animals (Pets)",
+    "subcategory": "Shelter, Adoption & Population Management",
+    "sourceType": "industry",
+    "sourceLabel": "Industry & NGO Report",
+    "title": "2025 Annual Data Report",
+    "authors": "Shelter Animals Count",
+    "publication": "Shelter Animals Count",
+    "year": 2025,
+    "access": "open",
+    "url": "https://www.shelteranimalscount.org/2025-report/",
+    "keyFinding": "757,000 dogs and cats experienced a non-live outcome in 2025. 4.2 million dogs and cats were adopted, a 1% increase from 2024. Stray animals made up 59% of all intakes nationwide, with owner surrenders rising slightly to 30%.",
+    "impactSummary": "This is the most current, authoritative national dataset on shelter outcomes in the US \u2014 essential baseline data for any economic analysis of sheltering costs and policy interventions. The slight rise in owner surrenders to 30% of intakes signals a worsening economic squeeze on pet owners. When households cannot afford veterinary care, food, or pet-friendly housing, animals enter the shelter system \u2014 shifting costs from private households to public and nonprofit infrastructure.",
+    "impactType": "negative",
+    "audience": [
+      "Policymakers",
+      "Shelter Operators",
+      "Donors",
+      "Researchers"
+    ],
+    "tags": [
+      "shelter outcomes",
+      "euthanasia",
+      "adoption",
+      "stray animals",
+      "owner surrender",
+      "national data",
+      "2025"
+    ]
+  },
+  {
+    "id": 13,
+    "category": "Companion Animals (Pets)",
+    "subcategory": "Shelter, Adoption & Population Management",
+    "sourceType": "academic",
+    "sourceLabel": "Peer-Reviewed / Academic",
+    "title": "Examining the Relationship Between Social Vulnerability and Animal Shelter Intakes and Outcomes",
+    "authors": "Neal SM, Kremer T",
+    "publication": "MDPI Animals",
+    "year": 2024,
+    "access": "open",
+    "url": "https://doi.org/10.3390/ani14223166",
+    "keyFinding": "Animals tended to enter shelters from areas of higher social vulnerability while being adopted out to homes across all vulnerability levels. Racial/ethnic minority status and socioeconomic status produced the strongest differences between intake and adoption vulnerability levels.",
+    "impactSummary": "This peer-reviewed study provides hard data connecting community economic conditions directly to shelter intake patterns. Animals most at risk live in the same communities as the people most financially stressed \u2014 creating compounding harm. Shelter outcomes are not just an animal welfare problem; they are an economic equity problem. Interventions that address community economic stress \u2014 access to low-cost veterinary care, pet-friendly housing \u2014 are among the most effective tools for reducing shelter intakes.",
+    "impactType": "negative",
+    "audience": [
+      "Policymakers",
+      "Shelter Operators",
+      "Researchers",
+      "Donors"
+    ],
+    "tags": [
+      "social vulnerability",
+      "economic equity",
+      "shelter intakes",
+      "adoption",
+      "low-income communities",
+      "SVI"
+    ]
+  },
+  {
+    "id": 14,
+    "category": "Companion Animals (Pets)",
+    "subcategory": "Shelter, Adoption & Population Management",
+    "sourceType": "academic",
+    "sourceLabel": "Peer-Reviewed / Academic",
+    "title": "Companion Animal Foster Caregiving: A Scoping Review",
+    "authors": "Phillips GE, Gunter LM",
+    "publication": "PeerJ",
+    "year": 2024,
+    "access": "open",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11648680",
+    "keyFinding": "Foster care is an effective tool for improving animal welfare by removing animals from shelter stressors, providing greater social interaction, and offering opportunities for improved health and behavior outcomes.",
+    "impactSummary": "Foster programs represent a lower-cost, higher-welfare alternative to traditional shelter housing. Animals in foster care show better health and behavioral outcomes than those housed in shelters \u2014 meaning the investment in foster program infrastructure pays returns in both animal welfare and adoption success rates. For CAWE's audience, this is a concrete example of where the humane choice and the economically efficient choice are the same choice.",
+    "impactType": "positive",
+    "audience": [
+      "Shelter Operators",
+      "Policymakers",
+      "Donors",
+      "Researchers"
+    ],
+    "tags": [
+      "foster care",
+      "shelter alternatives",
+      "adoption outcomes",
+      "animal welfare",
+      "cost-effective",
+      "behavioral health"
+    ]
   }
 ]
