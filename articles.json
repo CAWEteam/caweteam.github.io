@@ -422,5 +422,306 @@
       "cost-effective",
       "behavioral health"
     ]
+  },
+  {
+    "id": 15,
+    "category": "Wildlife & Wild Animals",
+    "subcategory": "Pest Management Economics",
+    "sourceType": "academic",
+    "sourceLabel": "Peer-Reviewed / Academic",
+    "title": "Economic Costs of Biological Invasions Within North America",
+    "authors": "Crystal-Ornelas R, Hudgins EJ, Cuthbert RN, et al.",
+    "publication": "Science of the Total Environment",
+    "year": 2021,
+    "access": "open",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0048969721063968",
+    "keyFinding": "Invasive species have cost the North American economy at least $1.26 trillion between 1960 and 2017, with annual costs climbing from $2 billion per year in the early 1960s to over $26 billion per year in the 2010s.",
+    "impactSummary": "Invasive vertebrates were associated with the greatest costs, with agriculture and forestry sectors absorbing $527 billion cumulatively over six decades. These numbers reframe invasive species management not as an environmental luxury but as an economic imperative with measurable returns on investment. For policymakers, the data shows that prevention is dramatically cheaper than remediation once an invasive species becomes established.",
+    "impactType": "negative",
+    "audience": [
+      "Policymakers",
+      "Researchers",
+      "Conservation Organizations",
+      "Donors"
+    ],
+    "tags": [
+      "invasive species",
+      "economic cost",
+      "North America",
+      "agriculture",
+      "biodiversity",
+      "wildlife management"
+    ]
+  },
+  {
+    "id": 16,
+    "category": "Wildlife & Wild Animals",
+    "subcategory": "Pest Management Economics",
+    "sourceType": "academic",
+    "sourceLabel": "Peer-Reviewed / Academic",
+    "title": "Wild Pigs, Wild Costs: The Economic Consequences of Wild Pig Invasions in the United States",
+    "authors": "McKee SC et al.",
+    "publication": "Pest Management Science (Wiley)",
+    "year": 2026,
+    "access": "open",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12713719/",
+    "keyFinding": "Wild pigs cause a minimum of $3.4 billion in annual damages to US agriculture, property, and natural resources \u2014 making them one of the costliest invasive species in the country.",
+    "impactSummary": "Despite the scale of damage, wild pig management remains chronically underfunded relative to the costs they generate. This study makes the economic case for proactive population management before costs compound further \u2014 a direct example of where the economics of wildlife management and animal welfare intersect. Unmanaged wild pig populations cause both ecological destruction and significant harm to other animals and ecosystems.",
+    "impactType": "negative",
+    "audience": [
+      "Policymakers",
+      "Researchers",
+      "Farmers & Producers",
+      "Conservation Organizations"
+    ],
+    "tags": [
+      "wild pigs",
+      "feral swine",
+      "invasive species",
+      "agricultural damage",
+      "USDA",
+      "wildlife management"
+    ]
+  },
+  {
+    "id": 17,
+    "category": "Wildlife & Wild Animals",
+    "subcategory": "Conservation Cost-Benefit Analysis",
+    "sourceType": "academic",
+    "sourceLabel": "Peer-Reviewed / Academic",
+    "title": "Cost-Benefit Analysis as a Decision Tool for Effective Conservation Planning",
+    "authors": "Multiple authors",
+    "publication": "Conservation Science and Practice",
+    "year": 2024,
+    "access": "open",
+    "url": "https://conbio.onlinelibrary.wiley.com/doi/10.1111/csp2.13273",
+    "keyFinding": "Despite being standard practice in nearly every other field, cost-benefit analysis is rarely applied to wildlife conservation decisions \u2014 leaving conservation funding systematically underoptimized.",
+    "impactSummary": "This peer-reviewed study demonstrates cost-benefit analysis applied to a wildlife corridor project in Tanzania, showing how economic tools can maximize conservation outcomes per dollar spent, address distributional equity, and inform community-based conservation. The implication for CAWE's audience is direct: conservation funding decisions made without economic analysis leave measurable value on the table and fail both animals and the communities that depend on them.",
+    "impactType": "positive",
+    "audience": [
+      "Conservation Organizations",
+      "Policymakers",
+      "Researchers",
+      "Donors"
+    ],
+    "tags": [
+      "cost-benefit analysis",
+      "conservation planning",
+      "wildlife corridor",
+      "elephant",
+      "Tanzania",
+      "funding efficiency"
+    ]
+  },
+  {
+    "id": 18,
+    "category": "Wildlife & Wild Animals",
+    "subcategory": "Conservation Cost-Benefit Analysis",
+    "sourceType": "academic",
+    "sourceLabel": "Peer-Reviewed / Academic",
+    "title": "Economic Valuation of Wildlife Conservation",
+    "authors": "Martino S, Kenter JO",
+    "publication": "European Journal of Wildlife Research",
+    "year": 2023,
+    "access": "paywalled",
+    "url": "https://link.springer.com/article/10.1007/s10344-023-01658-2",
+    "keyFinding": "Economic valuations of wildlife have been used to set conservation priorities, assess co-benefits, and drive novel incentive schemes \u2014 but mainstream economics conceives of wildlife value too narrowly, missing institutional and equity dimensions.",
+    "impactSummary": "This comprehensive review of wildlife valuation methods both makes the case for economic analysis in conservation and honestly identifies where that analysis falls short. For CAWE's audience this is essential reading: it shows how economic tools have successfully advanced conservation goals, while also flagging the risk of reducing complex ecological and community values to a single dollar figure. A rigorous, intellectually honest addition to the repository.",
+    "impactType": "mixed",
+    "audience": [
+      "Researchers",
+      "Policymakers",
+      "Conservation Organizations"
+    ],
+    "tags": [
+      "economic valuation",
+      "wildlife conservation",
+      "biodiversity",
+      "willingness to pay",
+      "deliberative valuation"
+    ]
+  },
+  {
+    "id": 19,
+    "category": "Farm & Livestock Animals",
+    "subcategory": "Policy, Regulation & Legislation",
+    "sourceType": "academic",
+    "sourceLabel": "Peer-Reviewed / Academic",
+    "title": "The Burden of Antimicrobial Resistance in Livestock: A Framework to Estimate Its Impact",
+    "authors": "Multiple authors",
+    "publication": "PMC / One Health",
+    "year": 2024,
+    "access": "open",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11533088/",
+    "keyFinding": "Antimicrobial resistance in livestock has far-reaching social and economic consequences beyond the farm gate \u2014 including on human health and the environment \u2014 but standardized methods for quantifying this burden have not yet existed.",
+    "impactSummary": "This peer-reviewed framework proposes standardized methods for quantifying the burden of antibiotic use and resistance in livestock \u2014 an essential tool for farm-level decision making and policy development. For CAWE, this is the missing link between farm animal welfare and public health economics: how the treatment of animals in agriculture becomes a cost borne by human healthcare systems. The livestock industry's routine antibiotic use is not just an animal welfare problem \u2014 it is a trillion-dollar public health liability.",
+    "impactType": "negative",
+    "audience": [
+      "Policymakers",
+      "Farmers & Producers",
+      "Researchers",
+      "General Public"
+    ],
+    "tags": [
+      "antimicrobial resistance",
+      "AMR",
+      "livestock",
+      "antibiotics",
+      "public health",
+      "One Health",
+      "farm welfare"
+    ]
+  },
+  {
+    "id": 20,
+    "category": "Farm & Livestock Animals",
+    "subcategory": "Policy, Regulation & Legislation",
+    "sourceType": "government",
+    "sourceLabel": "Government & Policy",
+    "title": "FAO Report: Long-Term Economic Case for Tackling Antimicrobial Resistance in Livestock",
+    "authors": "Food and Agriculture Organization of the United Nations (FAO)",
+    "publication": "FAO",
+    "year": 2026,
+    "access": "open",
+    "url": "https://www.fao.org/newsroom/detail/fao-report-highlights-long-term-economic-case-for-tackling-antimicrobial-resistance-in-livestock/en",
+    "keyFinding": "Antimicrobial growth promoters may offer short-term productivity gains, but cumulative global welfare losses from high antimicrobial resistance could reach $1.25 trillion by 2040 \u2014 far exceeding the $80 billion cost of phasing them out.",
+    "impactSummary": "The livestock industry's short-term economic incentive to continue antibiotic use is directly at odds with its long-term economic survival. The FAO's scenario-based modelling makes this tradeoff quantifiable for the first time at a global scale. This is exactly the kind of misaligned incentive CAWE exists to make visible \u2014 where the economics of humane, welfare-forward farming align with long-term business resilience far better than current practices do.",
+    "impactType": "negative",
+    "audience": [
+      "Policymakers",
+      "Farmers & Producers",
+      "Researchers",
+      "Donors"
+    ],
+    "tags": [
+      "antimicrobial resistance",
+      "FAO",
+      "livestock",
+      "growth promoters",
+      "One Health",
+      "food security",
+      "global policy"
+    ]
+  },
+  {
+    "id": 21,
+    "category": "Farm & Livestock Animals",
+    "subcategory": "Farm Profitability & Welfare Indicators",
+    "sourceType": "academic",
+    "sourceLabel": "Peer-Reviewed / Academic",
+    "title": "Antimicrobials in Livestock Farming and Resistance: Public Health Implications",
+    "authors": "Multiple authors",
+    "publication": "MDPI Antibiotics",
+    "year": 2025,
+    "access": "open",
+    "url": "https://www.mdpi.com/2079-6382/14/6/606",
+    "keyFinding": "The accelerated spread of bacterial resistance reduces the effectiveness of antibiotic treatments, resulting in higher morbidity, mortality, and costs for livestock producers. It is expected that the majority of future global antimicrobial use will occur in animal production.",
+    "impactSummary": "This peer-reviewed study connects farm-level antibiotic practices directly to the broader public health crisis of antimicrobial resistance \u2014 making clear that how we treat farm animals is inseparable from how resistant our medicine becomes. For producers, the economics are increasingly clear: antibiotic-dependent farming faces rising costs as resistance grows, while welfare-forward farming that reduces antibiotic dependence through better animal health management is positioned for long-term resilience.",
+    "impactType": "negative",
+    "audience": [
+      "Farmers & Producers",
+      "Policymakers",
+      "Researchers",
+      "General Public"
+    ],
+    "tags": [
+      "antibiotics",
+      "antimicrobial resistance",
+      "livestock",
+      "public health",
+      "farm costs",
+      "bacterial resistance"
+    ]
+  },
+  {
+    "id": 22,
+    "category": "Companion Animals (Pets)",
+    "subcategory": "Veterinary Costs & Healthcare Economics",
+    "sourceType": "mainstream",
+    "sourceLabel": "Mainstream & Public Media",
+    "title": "The Rising Cost of Pet Care",
+    "authors": "Companion Pet Magazine",
+    "publication": "Companion Pet Magazine",
+    "year": 2025,
+    "access": "open",
+    "url": "https://companionpetmagazine.com/issues/holiday-2025/the-rising-cost-of-pet-care",
+    "keyFinding": "Between 2021 and 2024, pet services including veterinary care increased at an average rate of 7.43% per year \u2014 with prices up nearly 25% since 2021, considerably outpacing overall inflation.",
+    "impactSummary": "50% of pet parents without pet insurance reported worrying about how to pay the vet bill if a pet gets sick. This piece translates Bureau of Labor Statistics data into plain language, making it ideal for general audiences seeking to understand why pet care has become a financial burden for millions of households. The compounding effect of sustained above-inflation price increases is eroding pet owners's ability to provide basic care \u2014 with direct consequences for animal welfare.",
+    "impactType": "negative",
+    "audience": [
+      "Pet Owners",
+      "General Public",
+      "Policymakers",
+      "Donors"
+    ],
+    "tags": [
+      "veterinary costs",
+      "inflation",
+      "pet insurance",
+      "BLS",
+      "pet care",
+      "affordability"
+    ]
+  },
+  {
+    "id": 23,
+    "category": "Companion Animals (Pets)",
+    "subcategory": "Veterinary Costs & Healthcare Economics",
+    "sourceType": "industry",
+    "sourceLabel": "Industry & NGO Report",
+    "title": "Study Shows Rising Pet Food, Veterinary Costs Top Challenges to Pet Ownership",
+    "authors": "Packaged Facts",
+    "publication": "Packaged Facts / MyVetCandy",
+    "year": 2025,
+    "access": "open",
+    "url": "https://www.myvetcandy.com/blog/2025/7/11/study-shows-rising-pet-food-veterinary-costs-top-challenges-to-pet-ownership",
+    "keyFinding": "42% of pet owners cite pet food prices as a major challenge, while 39% point to veterinary expenses. These financial pressures are influencing pet ownership decisions at scale \u2014 deterring new adoptions and threatening long-term pet care stability.",
+    "impactSummary": "The shift away from the stable spending patterns seen in 2021 is unlikely to reverse unless inflation stabilizes. For CAWE, this data connects the economics of pet ownership directly to shelter intake trends and the broader welfare of companion animals. When ownership becomes unaffordable, animals enter the shelter system \u2014 shifting costs from private households to public and nonprofit infrastructure that is already under strain.",
+    "impactType": "negative",
+    "audience": [
+      "Pet Owners",
+      "Shelter Operators",
+      "Policymakers",
+      "Donors"
+    ],
+    "tags": [
+      "pet food costs",
+      "veterinary expenses",
+      "pet ownership",
+      "inflation",
+      "adoption",
+      "shelter intake"
+    ]
+  },
+  {
+    "id": 24,
+    "category": "Companion Animals (Pets)",
+    "subcategory": "Shelter, Adoption & Population Management",
+    "sourceType": "mainstream",
+    "sourceLabel": "Mainstream & Public Media",
+    "title": "America's Animal Shelters Are Overwhelmed. Pets and Staff Are at Breaking Point.",
+    "authors": "Economic Hardship Reporting Project / The Guardian",
+    "publication": "Economic Hardship Reporting Project",
+    "year": 2024,
+    "access": "open",
+    "url": "https://economichardship.org/2024/04/americas-animal-shelters-are-overwhelmed-pets-and-staff-are-at-breaking-point/",
+    "keyFinding": "After a record low of 5.5 million shelter intakes in 2020, animal intakes are increasing \u2014 with 6.5 million animals entering shelters in 2023, and only a little over 6 million leaving.",
+    "impactSummary": "The cost of living crisis has direct consequences for animal welfare: as households face economic pressure, pets enter the shelter system at higher rates, stay longer, and face greater risk of euthanasia. Published jointly by the Economic Hardship Reporting Project and The Guardian, this piece makes the economic roots of the shelter crisis visible to a mainstream audience \u2014 connecting housing costs, inflation, and income instability directly to animal outcomes. Shelter staff burnout from performing euthanasia adds a human cost dimension rarely captured in policy discussions.",
+    "impactType": "negative",
+    "audience": [
+      "General Public",
+      "Policymakers",
+      "Shelter Operators",
+      "Donors"
+    ],
+    "tags": [
+      "shelter crisis",
+      "euthanasia",
+      "economic hardship",
+      "cost of living",
+      "housing",
+      "shelter staff",
+      "The Guardian"
+    ]
   }
 ]
